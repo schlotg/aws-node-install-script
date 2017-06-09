@@ -1,6 +1,5 @@
 ### Define the APP name and the App Entry point
 read -t 1 -n 10000 discard
-sleep 5
 echo "AWS LINUX EC2 Node Installer"
 echo "Enter the App Name (This should match the Apps directory name when you git clone)?"
 read APP_NAME </dev/tty
@@ -16,7 +15,7 @@ read EMAIL </dev/tty
 sudo yum -y update
 sudo yum -y install git
 ### Install the installer.md file
-curl -L https://git.io/vHMDm >> installer.md
+curl -L https://git.io/vHMDm > installer.md
 #### Install Node
 curl -L https://git.io/n-install | bash
 ssh-keygen -t rsa -b 4096 -C $EMAIL
