@@ -1,7 +1,7 @@
 ### Define the APP name and the App Entry point
 read -t 1 -n 10000 discard
 sleep 5
-echo "AWS INSTANCE Node Installer"
+echo "AWS LINUX EC2 Node Installer"
 echo "Enter the App Name (This should match the Apps directory name when you git clone)?"
 read APP_NAME </dev/tty
 echo "Enter the App's entry point (It should be a node js file)?"
