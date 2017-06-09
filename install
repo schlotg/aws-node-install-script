@@ -51,13 +51,17 @@ echo "Created the App Upstart .conf file"
 echo
 cat /home/ec2-user/.ssh/id_rsa.pub
 echo "This is the public ssh key for the home account please add it to Github and presss enter (so you can pull without sudo)"
-read a
+read
 echo
 sudo cat /root/.ssh/id_rsa.pub
 echo "This is the public ssh key for the root account please add it to Github and presss enter (so you can pull with sudo)"
-read b
+read
+echo "Installer is about to clone your project $APP_NAME. You will see two prompts about the authenticity the git provider. Please type 'yes' for both prompts" 
+# Clone this once as sudo and once as user so the id of git project host is added to the list of known hosts
+sudo git clone $GIT_SSH
+sudo rm -fr $APP_NAME
 git clone $GIT_SSH
-echo "Please take the following steps so you can use Node as a super user"
+echo "Please take the following steps so you can use Node as a super user (sudo)"
 echo "
 sudo su
   vi /etc/sudoers
@@ -67,6 +71,4 @@ sudo su
   <Type ESC and then :wq! and RETURN>
   exit
 "
-echo
-echo "And finally, to load the changes into the shell environment, restart the shell or type '. ~/.bashrc' "
-echo "You can find further instructions in installer.md"
+echo "You can find further instructions in /home/ec2-user/installer.md"
