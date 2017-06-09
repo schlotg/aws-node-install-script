@@ -1,6 +1,7 @@
 ### Define the APP name and the App Entry point
 read -t 1 -n 10000 discard
-wait
+sleep 5
+echo ""
 echo "Enter the App Name (This should match the Apps directory name when you git clone)?"
 read APP_NAME </dev/tty
 echo "Enter the App's entry point (It should be a node js file)?"
