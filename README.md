@@ -14,7 +14,7 @@ A Upstart script is created during the install process which allows your app to 
 The Upstart configuration file lives in /etc/init/app-name.conf. The stdout out of your app when running through upstart is piped to /var/log/app-name.log You can watch it with the following command: ```tail -f /var/log/<app-name>.log```
 
 ## AWS CodeDeploy
-The installer also installs the AWS CodeDeploy Service on the instance to make it easy to deploy. See the AWS documentation for information on how to setup a YML file and deployment scripts. I recommend deploying via Github.
+The installer also installs the AWS CodeDeploy Service on the instance to make it easy to deploy. See the AWS documentation for information on how to setup a YML file and deployment scripts. I recommend deploying via CodeDeploy and Github.
 
 ## Git Clone
 Your App is installed via git clone and the installer asks you to add this instance's ssh keys 
@@ -46,4 +46,4 @@ I reccomend keeping all the environment variables that contain account informati
 ```
 
 ## Final Thoughts
-You will still need to install all your project dependencies just like you would on your development machine. Once you have everything installed and running be sure to create an AMI and then base all future deplyments off of this image. Also be sure to ```sudo start <app-name>``` so that the app is up and running before you exit the shell. To debug and instance, typcially you will want to stop the service first and then manually run node as you would on your development machine.
+You will still need to install all your project dependencies just like you would on your development machine. Once you have everything installed and running be sure to create an AMI and then base all future deplyments off of this image. Also be sure to ```sudo start <app-name>``` so that the app is up and running before you exit the shell. To debug and instance, typcially you will want to stop the service first and then manually run Node as you would on your development machine.
