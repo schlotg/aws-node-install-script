@@ -37,7 +37,7 @@ After initial installation you can restart the terminal or type:
 to load the environment changes into your shell.
 
 ## Enviroment Variables
-I reccomend keeping all the environment variables that contain account information out of your repository and stored in a controlled secure location. You can then load them into App using the dotenv library. https://github.com/motdotla/dotenv The easiest way I have found to create a .env file on your instance is to:
+I reccomend keeping all the environment variables that contain account information out of your repository and stored in a controlled secure location. You can then load them into App using the [dotenv library](https://github.com/motdotla/dotenv). The easiest way I have found to create a .env file on your instance is to use vi and just paste your envrionment variables into it:
 ```
   sudo vi .env
   <Press the i key>
