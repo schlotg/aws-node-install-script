@@ -8,7 +8,7 @@ echo "Enter this AWS Instance's Center (Ex. us-east-1)?"
 read AWS_CENTER </dev/tty
 echo "Enter the Git SSH clone URL for this app's project?"
 read GIT_SSH </dev/tty
-echo "Enter an Email (used to generate the SSH keys Git will use for this instance)
+echo "Enter an Email (used to generate the SSH keys Git will use for this instance)"
 read EMAIL </dev/tty
 ### Make sure everything is up to date ###
 sudo yum -y update
