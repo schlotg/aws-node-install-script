@@ -1,5 +1,5 @@
 # aws-node-install-script
-This is a script I use to get Node up and running on AWS Linux instances. To use this script create an Amazon Linux instance in your AWS console and then ssh into it. To launch the script type: 'curl https://github.com/schlotg/aws-node-install-script/blob/master/install | bash
+This is a script I use to get Node up and running on AWS Linux instances. To use this script create an Amazon Linux instance in your AWS console and then ssh into it. To launch the script type: 'curl -L https://github.com/schlotg/aws-node-install-script/blob/master/install | bash
 
 ## n
 This installer installs Node via 'n' which makes it really easy to change node versions. For a complete reference on 'n' and it's commands go to: https://github.com/tj/n
