@@ -4,13 +4,10 @@ sleep 5
 echo "AWS INSTANCE Node Installer"
 echo "Enter the App Name (This should match the Apps directory name when you git clone)?"
 read APP_NAME </dev/tty
-echo $APP_NAME
 echo "Enter the App's entry point (It should be a node js file)?"
 read APP_ENTRY </dev/tty
-echo $APP_ENTRY
 echo "Enter this AWS Instance's Center (Ex. us-east-1)?"
 read AWS_CENTER </dev/tty
-echo $AWS_CENTER
 echo "Enter the Git SSH clone URL for this app's project?"
 read GIT_SSH </dev/tty
 echo "Enter an Email (used to generate the SSH keys Git will use for this instance)"
@@ -22,9 +19,10 @@ sudo yum -y install git
 curl -L https://git.io/vHMDm >> installer.md
 #### Install Node
 curl -L https://git.io/n-install | bash
-ssh-keygen -t rsa -b 4096 -C "$EMAIL"
-sudo ssh-keygen -t rsa -b 4096 -C "$EMAIL"
+ssh-keygen -t rsa -b 4096 -C $EMAIL
+sudo ssh-keygen -t rsa -b 4096 -C $EMAIL
 #### Install AWS Code Deploy
+echo "Installing AWS CodeDeploy"
 wget https://aws-codedeploy-$AWS_CENTER.s3.amazonaws.com/latest/install
 chmod +x ./install
 sudo ./install auto
@@ -49,6 +47,7 @@ echo "
 " >> $APP_NAME.conf
 sudo chmod -v 644 $APP_NAME.conf
 sudo mv -v $APP_NAME.conf /etc/init/$APP_NAME.conf
+echo "Created the App Upstart .conf file"
 #### Get the SSH keys and clone
 echo
 cat /home/ec2-user/.ssh/id_rsa.pub
