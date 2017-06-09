@@ -1,13 +1,16 @@
 ### Define the APP name and the App Entry point
 read -t 1 -n 10000 discard
 sleep 5
-echo ""
+echo "AWS INSTANCE Node Installer"
 echo "Enter the App Name (This should match the Apps directory name when you git clone)?"
 read APP_NAME </dev/tty
+echo $APP_NAME
 echo "Enter the App's entry point (It should be a node js file)?"
 read APP_ENTRY </dev/tty
+echo $APP_ENTRY
 echo "Enter this AWS Instance's Center (Ex. us-east-1)?"
 read AWS_CENTER </dev/tty
+echo $AWS_CENTER
 echo "Enter the Git SSH clone URL for this app's project?"
 read GIT_SSH </dev/tty
 echo "Enter an Email (used to generate the SSH keys Git will use for this instance)"
