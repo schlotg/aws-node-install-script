@@ -1,5 +1,6 @@
 # aws-node-install-script
-This is a script I use to get Node up and running on AWS Linux instances. To use this script create an Amazon Linux instance in your AWS console and then ssh into it. To launch the script type: 'curl -L https://github.com/schlotg/aws-node-install-script/blob/master/install | bash
+This is a script I use to get Node up and running on AWS Linux instances. To use this script create an Amazon Linux instance in your AWS console and then ssh into it. To launch the script type: 
+```curl -L https://github.com/schlotg/aws-node-install-script/master/install | bash ```
 
 ## n
 The installer installs Node via 'n' which makes it really easy to change node versions. For a complete reference on 'n' and it's commands go to: https://github.com/tj/n
@@ -45,5 +46,5 @@ I reccomend keeping all the environment variables that contain account informati
   <Type ESC and then :wq! and RETURN>
 ```
 
-## Final Thoughts
+## Misc
 You will still need to install all your project dependencies just like you would on your development machine. Once you have everything installed and running be sure to create an AMI and then base all future deplyments off of this image. Also be sure to ```sudo start <app-name>``` so that the app is up and running before you exit the shell. To debug and instance, typcially you will want to stop the service first and then manually run Node as you would on your development machine.

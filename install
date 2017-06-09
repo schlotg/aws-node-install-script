@@ -13,7 +13,7 @@ read EMAIL
 sudo yum -y update
 sudo yum -y install git
 ### Install the installer.md file
-curl -L https://github.com/schlotg/aws-node-install-script/blob/master/README.md >> installer.md
+curl -L https://raw.githubusercontent.com/schlotg/aws-node-install-script/master/README.md >> installer.md
 #### Install Node
 curl -L https://git.io/n-install | bash
 ssh-keygen -t rsa -b 4096 -C "$EMAIL"
